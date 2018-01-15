@@ -11,19 +11,19 @@
 			  		<div class="row">
 				    	<div class="form-group col-lg-4">
 	    					<label for="test_cases">Numero de Casos de Prueba</label>
-	    					<input type="text" class="form-control" id="test_cases">
+	    					<input type="text" class="form-control" id="test_cases" v-model="test_cases">
 	  					</div>
 	  					<div class="form-group col-lg-4">
 	    					<label for="size_matrix">Tamaño de la matriz</label>
-	    					<input type="text" class="form-control" id="size_matrix">
+	    					<input type="text" class="form-control" id="size_matrix" v-model="size_matrix">
 	  					</div>
 	  					<div class="form-group col-lg-4">
 	    					<label for="number_operations">Numero de Operaciones</label>
-	    					<input type="text" class="form-control" id="number_operations">
+	    					<input type="text" class="form-control" id="number_operations" v-model="number_operations">
 	  					</div>
 			  		</div>
 			  		<div class="row">
-			  			<button class="btn btn-info">Jugar</button>
+			  			<button class="btn btn-info" @click="playCubeSummation()">Jugar</button>
 			  		</div>
 			  	</div>
 			</div>

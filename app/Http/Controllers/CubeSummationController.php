@@ -15,10 +15,10 @@ class CubeSummationController extends Controller
     public function cube_summation(Request $request)
     {
 
-    	$checkValidateFields = CubeSummationLogic::validate_fields($request);
+    	$checkValidateFields = CubeSummationLogic::validation_fields($request);
 
-    	if ($checkValidateFields) {
-    		return "campos validos";
+    	if (!is_array($checkValidateFields)) {
+    		
     	}else{
 
     		return $checkValidateFields;

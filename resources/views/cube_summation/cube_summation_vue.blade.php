@@ -4,7 +4,9 @@ var app = new Vue({
         el: '#app',
         data: {
            
-        	name: '',
+        	test_cases: '',
+            size_matrix:'',
+            number_operations:'',
         	error:false,
         	message: '',
             success:false,
@@ -17,7 +19,39 @@ var app = new Vue({
            
         },
         methods: {
-            
+
+            sendCubeSummationFields:function(){
+
+                var cube_summation = {
+
+                    'test_cases':this.test_cases,
+                    'size_matrix':this.size_matrix,
+                    'number_operations':this.number_operations,
+                }
+                return cube_summation;
+            },
+            playCubeSummation:function(){
+                this.$http.post('/cube_summation',this.sendCubeSummationFields()).then(function (response) {
+                   
+                    if (response.data.error) {
+
+                        this.error     = true;
+                        this.success   = false;
+                        this.errors    = response.data.error;
+                        
+                    }else{
+
+                        this.error     = false;
+                        this.success   = true;
+                        this.message   = response.data.message;
+
+                        
+                    }
+                }, function (error) {
+                    
+                    console.log(error);
+                });
+            },
         }
     });
 </script>
