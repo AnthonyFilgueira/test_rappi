@@ -18,6 +18,15 @@ class CubeSummationController extends Controller
     	$checkValidateFields = CubeSummationLogic::validation_fields($request);
 
     	if (!is_array($checkValidateFields)) {
+
+    		$array_cube_summation = CubeSummationLogic::setArrayWithCero($request->size_matrix);
+
+    		for ($i=1; $i <= $request->test_cases; $i++) 
+    		{ 
+    			
+    		}
+
+    		return $array_cube_summation;
     		
     	}else{
 

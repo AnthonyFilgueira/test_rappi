@@ -41,9 +41,7 @@ var app = new Vue({
                         
                     }else{
 
-                        this.error     = false;
-                        this.success   = true;
-                        this.message   = response.data.message;
+                       console.log(response);
 
                         
                     }

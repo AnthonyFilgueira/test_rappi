@@ -6,6 +6,22 @@ use Illuminate\Http\Request;
 
 class CubeSummationLogic
 {
+	public static  function setArrayWithCero($size_matrix)
+	{
+		for ($x=1; $x <= $size_matrix; $x++) 
+		{ 
+			for ($y=1; $y <= $size_matrix; $y++) 
+			{ 
+				for ($z=1; $z <= $size_matrix; $z++) 
+				{ 
+					$array_cube [$x][$y][$z] = 0;
+				}
+			}
+		}
+
+		return $array_cube;
+
+	}
     public  static function validation_fields(Request $request)
     {
     	$validator = \Validator::make($request->all(), [
