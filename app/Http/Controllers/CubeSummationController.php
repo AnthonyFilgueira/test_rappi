@@ -21,12 +21,11 @@ class CubeSummationController extends Controller
 
     		$array_cube_summation = CubeSummationLogic::setArrayWithCero($request->size_matrix);
 
-    		for ($i=1; $i <= $request->test_cases; $i++) 
-    		{ 
-    			
-    		}
+    		 
+    		$output = CubeSummationLogic::generate_operation($array_cube_summation,$request->test_cases,$request->size_matrix,$request->number_operations);
+    		
 
-    		return $array_cube_summation;
+    		return $output;
     		
     	}else{
 

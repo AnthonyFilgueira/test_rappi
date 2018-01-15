@@ -30,10 +30,16 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-6">
-				<p>Datos de Entrada</p>
+				<h5 class="text-center"> Datos de Entrada </h5>
+				<ul class="list-group">
+				  	<li class="list-group-item" v-for=" data in input_data">@{{ data }}</li>
+				</ul>
 			</div>
 			<div class="col-lg-6">
-				<p> Datos de Salida</p>
+				<h5 class="text-center"> Datos de Salida </h5>
+				<ul class="list-group">
+				  	<li class="list-group-item" v-for=" data in output_data">@{{ data }}</li>
+				</ul>
 			</div>
 		</div>
 	</div>
